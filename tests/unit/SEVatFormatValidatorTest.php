@@ -30,8 +30,76 @@ class SEVatFormatValidatorTest extends TestCase
     {
         return [
             [
-                'vatNumber',
-                'isValid',
+                'vatNumber' => 'SE123456789012',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'SE000000000000',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'SE111111111111',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'SE999999999999',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => '000000000000',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => '111111111111',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => '999999999999',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => '123456789012',
+                'isValid' => true,
+            ],
+            [
+                'vatNumber' => 'SE12345678901',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'SE1234567890123',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'DE123456789012',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'Se123456789012',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'sE123456789012',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => 'se123456789012',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => '1234567890123',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => '12345678901',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => '1',
+                'isValid' => false,
+            ],
+            [
+                'vatNumber' => '',
+                'isValid' => false,
             ],
         ];
     }
